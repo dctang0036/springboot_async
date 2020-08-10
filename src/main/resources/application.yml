@@ -2,8 +2,3 @@ server:
   port: 9011
 
 #  线程池配置
-spring:
-  task:
-    execution:
-      pool:
-        core-size: 8

@@ -20,6 +20,10 @@ public class TestController {
         long start = System.currentTimeMillis();
         asyncTask.task();
         asyncTask.task1();
+        asyncTask.task();
+        asyncTask.task();
+        asyncTask.task1();
+        asyncTask.task1();
         long end =  System.currentTimeMillis();
         System.out.println("主任务执行时间 " + (end - start));
         return "main task()";

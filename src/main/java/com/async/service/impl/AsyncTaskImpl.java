@@ -8,20 +8,20 @@ import org.springframework.stereotype.Service;
 public class AsyncTaskImpl implements AsyncTask {
 
     @Override
-    @Async
+    @Async("taskExecutor")
     public void task() throws InterruptedException {
         long start = System.currentTimeMillis();
         Thread.sleep(1000);
         long end = System.currentTimeMillis();
-        System.out.println("异步任务task执行时间 " + (end - start));
+        System.out.println(Thread.currentThread().getName() + " 异步任务task执行时间 " + (end - start));
     }
 
     @Override
-    @Async
+    @Async("taskExecutor")
     public void task1() throws InterruptedException {
         long start = System.currentTimeMillis();
         Thread.sleep(1000);
         long end = System.currentTimeMillis();
-        System.out.println("异步任务task1执行时间 " + (end - start));
+        System.out.println(Thread.currentThread().getName() + " 异步任务task1执行时间 " + (end - start));
     }
 }
